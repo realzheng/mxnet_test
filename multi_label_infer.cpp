@@ -86,14 +86,14 @@ public:
 
 
 		int batch_size = 1;
-		args_map["data"] = NDArray(Shape(batch_size, 3, 80, 40), ctx_cpu, false);//shape(batchsize,channel,width,height)
+		args_map["data"] = NDArray(Shape(batch_size, 3, 90, 32), ctx_cpu, false);//shape(batchsize,channel,width,height)
 		args_map["data"].SyncCopyFromCPU(vec);
 
 		NDArray::WaitAll();
 
 		map<string, NDArray> paramters;
 
-		NDArray::Load("multitask-0800.params", NULL, &paramters);
+		NDArray::Load("multitask-0990.params", NULL, &paramters);
 
 		for (const auto &k : paramters) {
 			if (k.first.substr(0, 4) == "aux:") {
