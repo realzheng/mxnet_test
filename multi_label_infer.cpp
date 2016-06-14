@@ -124,8 +124,8 @@ public:
 
 		float p_label = 0, max_p = dptr_out[0];
 		for (int j = 0; j < cat_num; ++j) {
+			float p = dptr_out[i * cat_num + j];
 			cout<<p<<" ";
-
 		}
 
 		delete exe;
